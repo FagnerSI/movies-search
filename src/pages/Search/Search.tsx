@@ -61,6 +61,7 @@ export default function Search({
           {resultSearch.length ? (
             resultSearch?.map((movie) => (
               <CardMovie
+                key={movie.id}
                 imagePath={movie.backdrop_path || movie.poster_path}
                 title={movie.title}
                 description={movie.overview}

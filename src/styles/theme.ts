@@ -7,9 +7,10 @@ const theme = {
   primaryFontColor: '#464545',
   secondaryFontColor: '#858585',
   lightFontColor: '#B5B6B7',
-  fontExtraBold: '700',
-  fontBold: '600',
-  fontSemiBold: '500',
+  fontExtraBold: '800',
+  fontBold: '700',
+  fontSemiBold: '600',
+  fontMedium: '500',
   fontRegular: '400',
   fontLight: '300',
   defaultRadius: '8px'

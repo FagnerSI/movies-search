@@ -5,7 +5,7 @@ export type CardMovieProps = {
     description: string, 
     footerText?: string,
     imagePath: string,
-    key?: string, 
+    key?: string | number, 
     onClick?: (event: MouseEvent) => void;
 } & React.HTMLAttributes<HTMLDivElement>;
 

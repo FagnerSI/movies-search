@@ -12,6 +12,7 @@ export const EmptyTitle = styled.span<IStyled>`
    font-size: 24px;
    font-weight: ${({ theme })=> theme.fontBold};
    color: ${({ theme })=> theme.lightFontColor};
+   margin-bottom: 16px;
 `;
 
 export const EmptyDescription = styled.p<IStyled>`

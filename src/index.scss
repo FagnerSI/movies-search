@@ -1,10 +1,16 @@
+@import './styles/variables';
+
+@include google-font('Montserrat:ital,wght@0,100..900;1,100..900');
+
+* {
+  @include font-family('Montserrat');
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--background-color);
 }
 
 code {

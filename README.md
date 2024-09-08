@@ -44,3 +44,52 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+## Arquitetura
+
+/src
+│
+├── /assets # Arquivos estáticos (imagens, fontes, etc.)
+│ ├── /images # Imagens
+│
+├── /components # Componentes reutilizáveis
+│ ├── /Button # Exemplo de componente de botão
+│ ├── Button.tsx
+│ ├── Button.styles.ts
+│ ├── index.ts
+│ └── types.ts
+│
+├── /containers # Componentes mais complexos ou "smart components"
+│ ├── /SearchPage # Exemplo de container para página inicial
+│ │ ├── SearchPage.tsx
+│ │ ├── SearchPage.scss
+│ │ └── index.tsx
+│
+├── /services # Serviços e APIs externas
+│ ├── api.ts # Arquivo de configuração da API
+│ └── Search # Serviço de busca
+│   └── index.ts
+|
+├── /utils # Utilitários e funções auxiliares
+│ ├── formatDate.ts # Exemplo de função de formatação de datas
+│ └── mountLinkImage.ts # Exemplo de função de montagem de link de imagem
+│
+├── /styles # Estilos globais
+│ ├── _variables.scss # Variáveis SASS
+│ └── theme.ts # Estilos globais
+│
+├── /types # Tipos globais
+│ ├── movie # Tipos de movies global
+| |  └── index.ts
+| |
+│ └── styles # Tipos de estilos globais
+|    └── index.ts
+|
+├── /pages # Páginas principais da aplicação
+│ ├── Home.tsx # Página principal
+│ └── Product.tsx # Página de produto
+│
+├── Root.tsx # Componente raiz que injeta o theme
+├── App.tsx # Componente principal
+├── index.tsx # Ponto de entrada do React
+└── reportWebVitals.ts # Ferramenta de medição de desempenho (opcional)

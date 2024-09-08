@@ -1,0 +1,99 @@
+@import '../../styles/breakpoints';
+
+$gap-card: 32px;
+
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-bottom: 72px;
+    box-sizing: border-box;
+
+    .buttonFavorite {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+   }
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    flex: 2;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+    background-color: var(--primary-color);
+    box-shadow: inset 0px -6px 30px var(--pure-black-color);
+
+    .imageLogo {
+      width: 420px;
+      margin-bottom: 48px;
+
+        @media (max-width: $tablet) {
+            width: 380px;
+        }
+       
+        @media (max-width: $mobile) {
+            width: 300px;
+        }
+    }
+
+    .search {
+        display: flex;
+        flex-direction: row;
+        gap: 1em;
+        flex-wrap: wrap;
+
+        .inputSearch {
+            min-width: 280px;
+        }
+
+        @media (max-width: $mobile) {
+            gap: 3.5em;
+            align-items: center;
+            justify-content: center;
+
+            .buttonSearch {
+                width: 220px;
+            }
+        }
+
+                 
+    }
+}
+
+.content {
+    display: flex;
+    max-width: 80vw;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: $gap-card;
+    flex: 8;
+    padding: 16px;
+    align-self: center;
+    padding-top: 48px;
+ 
+    .card {
+       min-width: calc(33% - $gap-card);
+
+        @media (max-width: $laptop) {
+           min-width: calc(50% - $gap-card);
+        }
+
+        @media (max-width: $tablet) {
+            min-width: 100%;
+        }
+    }
+               
+
+    @media (max-width: $mobile) {
+        max-width: 100vw;
+        justify-content: center;
+        
+    }
+}
+
+
+

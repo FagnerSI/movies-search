@@ -5,10 +5,16 @@ export default function Button({
   variant,
   title,
   className,
+  disabled,
   onClick,
 }: ButtonProps) {
   return (
-    <ButtonStyled variant={variant} className={className} onClick={onClick}>
+    <ButtonStyled
+      disabled={disabled}
+      variant={variant}
+      className={className}
+      onClick={onClick}
+    >
       {title}
     </ButtonStyled>
   );

@@ -28,7 +28,12 @@ export const ButtonStyled = styled.button<Partial<ButtonProps> & IStyled>`
   }
 
   &:active {
-    opacity: 0.7;
+    opacity: 0.6;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
   }
 
   @media (max-width: ${breakpoints.mobile}) {

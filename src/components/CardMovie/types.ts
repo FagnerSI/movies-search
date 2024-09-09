@@ -6,8 +6,9 @@ export type CardMovieProps = {
     footerText?: string,
     imagePath: string,
     key?: string | number, 
-    onClick?: (event: MouseEvent) => void;
-} & React.HTMLAttributes<HTMLDivElement>;
+    className?: string,
+    onClick?: (params?: unknown) => void;
+};
 
 export interface CardMovieStyledProps extends IStyled {
     description: string,

@@ -8,6 +8,7 @@ import { logo2x } from "~/assets/images";
 import { SearchProps } from "./types";
 import { formatterDate } from "~/utils/formatterDate";
 import EmptyResult from "~/components/EmptyResult";
+import { TBaseMovie } from "~/types/movie";
 
 export default function Search({
   onSearch,
@@ -23,6 +24,10 @@ export default function Search({
   const handleClickSearch = () => {
     onSearch(search);
     setSearch("");
+  };
+
+  const handleSelect = (movie: TBaseMovie) => {
+    window.dispatchEvent(new CustomEvent("movieSelected", { detail: movie }));
   };
 
   const onPressEnter = (event: InputOnKeyUpEvent) => {
@@ -67,7 +72,7 @@ export default function Search({
                 description={movie.overview}
                 footerText={footerText(movie.release_date)}
                 className={styles.card}
-                onClick={() => {}}
+                onClick={() => handleSelect(movie)}
               />
             ))
           ) : (
@@ -78,14 +83,6 @@ export default function Search({
               Use o campo de busca acima para isso. O resultado irá ser exibido aqui.`}
             />
           )}
-          <Button
-            className={styles.buttonFavorite}
-            title={"Ir Para Favoritos"}
-            variant="secondary"
-            onClick={() => {
-              alert("Teste");
-            }}
-          />
         </div>
       )}
     </div>

@@ -5,10 +5,17 @@ $gap-card: 32px;
 .container {
     position: relative;
     display: flex;
+    flex: 1;
     flex-direction: column;
     min-height: 100vh;
-    padding-bottom: 72px;
+    padding-bottom: 42px;
     box-sizing: border-box;
+
+    .buttonFavorite {
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+    }
 }
 
 .header {
@@ -61,32 +68,44 @@ $gap-card: 32px;
 .content {
     display: flex;
     max-width: 80vw;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
-    gap: $gap-card;
     flex: 8;
     padding: 16px;
     align-self: center;
-    padding-top: 48px;
+    box-sizing: border-box;
+
+    .contentTitle {
+        font-size: 22px;
+        font-weight: var(--font-bold);
+        color: var(--primary-font-color);
+    }
+
+    .contentCard {
+        display: flex;
+        flex-wrap: wrap;
+        gap: $gap-card;
+        padding-top: 24px;
+        box-sizing: border-box;
+
+        .card {
+            min-width: calc(33% - $gap-card);
+
+            @media (max-width: $laptop) {
+                min-width: calc(50% - $gap-card);
+            }
+
+            @media (max-width: $tablet) {
+                min-width: 100%;
+            }
+        }
+
+        @media (max-width: $mobile) {
+            max-width: 100vw;
+            justify-content: center;
+        }
+    }
  
-    .card {
-       min-width: calc(33% - $gap-card);
-
-        @media (max-width: $laptop) {
-           min-width: calc(50% - $gap-card);
-        }
-
-        @media (max-width: $tablet) {
-            min-width: 100%;
-        }
-    }
-               
-
-    @media (max-width: $mobile) {
-        max-width: 100vw;
-        justify-content: center;
-        
-    }
 }
 
 

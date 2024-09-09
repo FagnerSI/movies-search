@@ -13,6 +13,8 @@ import { TBaseMovie } from "~/types/movie";
 export default function Search({
   onSearch,
   loadingMovie,
+  isFavoriteList,
+  goToFavorite,
   resultSearch,
 }: SearchProps) {
   const [search, setSearch] = useState("");
@@ -63,26 +65,37 @@ export default function Search({
         <Spinner.Screen />
       ) : (
         <div className={styles.content}>
-          {resultSearch.length ? (
-            resultSearch?.map((movie) => (
-              <CardMovie
-                key={movie.id}
-                imagePath={movie.backdrop_path || movie.poster_path}
-                title={movie.title}
-                description={movie.overview}
-                footerText={footerText(movie.release_date)}
-                className={styles.card}
-                onClick={() => handleSelect(movie)}
-              />
-            ))
-          ) : (
-            <EmptyResult
-              title="Buscar Filmes"
-              description={`
+          <span className={styles.contentTitle}>
+            {isFavoriteList ? "Sua lista de favoritos" : "Resultado da busca"}
+          </span>
+          <div className={styles.contentCard}>
+            {resultSearch.length ? (
+              resultSearch?.map((movie) => (
+                <CardMovie
+                  key={movie.id}
+                  imagePath={movie.backdrop_path || movie.poster_path}
+                  title={movie.title}
+                  description={movie.overview}
+                  footerText={footerText(movie.release_date)}
+                  className={styles.card}
+                  onClick={() => handleSelect(movie)}
+                />
+              ))
+            ) : (
+              <EmptyResult
+                title="Buscar Filmes"
+                description={`
               Aqui você busca por filmes que deseja saber mais informações.
               Use o campo de busca acima para isso. O resultado irá ser exibido aqui.`}
-            />
-          )}
+              />
+            )}
+          </div>
+          <Button
+            className={styles.buttonFavorite}
+            title="Favoritos"
+            variant={"secondary"}
+            onClick={goToFavorite}
+          />
         </div>
       )}
     </div>
